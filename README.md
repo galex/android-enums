@@ -1,10 +1,20 @@
-# android-enums
+# Android Enums (1.0)
 
 ## Sales Speech
 
 Tired of using constants? Your code is unmaintainable because of constants? You hate constants? You love enums ? Want to make Android great again?
 
 Look no more and use android-enums!
+
+## Usage
+
+```gradle
+dependencies {
+    (...)
+    compile 'il.co.galex:android-enums:1.0'
+}
+
+```
 
 ## Goal
 

@@ -1,9 +1,23 @@
 group 'il.co.galex'
 version '1.0'
 
-apply plugin: 'java'
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6'
+    }
+}
 
-sourceCompatibility = 1.5
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+apply plugin: 'com.jfrog.bintray'
+
+compileJava {
+    sourceCompatibility = 1.6
+    targetCompatibility = 1.6
+}
 
 repositories {
     mavenCentral()
@@ -12,3 +26,50 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.allJava
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    from javadoc.destinationDir
+}
+
+publishing {
+    publications {
+        AndroidEnumsPublication(MavenPublication) {
+            groupId = group
+            artifactId = 'android-enums'
+            version = version
+            from components.java
+
+            artifact sourceJar {
+                classifier "sources"
+            }
+
+            artifact javadocJar {
+                classifier = 'javadoc'
+            }
+        }
+    }
+}
+
+bintray {
+    user bintrayUser
+    key bintrayPass
+    pkg {
+        repo = 'maven'
+        name = 'android-enums'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/galex/android-enums.git'
+
+        version {
+            name = group
+            desc = 'Android Enums'
+            released = new Date()
+            vcsTag = version
+            publications = ['AndroidEnumsPublication']
+        }
+    }
+}
+
