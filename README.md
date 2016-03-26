@@ -56,4 +56,9 @@ Here are the list of constants converted to enums:
     - DATA_ACTIVITY_INOUT
     - DATA_ACTIVITY_DORMANT
 
+##### DataConnectionState
 
+    - DATA_DISCONNECTED
+    - DATA_CONNECTING
+    - DATA_CONNECTED
+    - DATA_SUSPENDED

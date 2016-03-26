@@ -32,18 +32,17 @@ public enum DataConnectionActivity {
 
     public static DataConnectionActivity get(int value){
 
-        for (DataConnectionActivity dataConnectionActivity : values()) {
-            if(dataConnectionActivity.ordinal() == value) return dataConnectionActivity;
+        for (DataConnectionActivity type : values()) {
+            if(type.ordinal() == value) return type;
         }
         return UNKNOWN;
     }
 
     public static DataConnectionActivity get(String name){
 
-        for (DataConnectionActivity dataConnectionActivity : values()) {
-            if(name != null && dataConnectionActivity.name().toLowerCase().equals(name.toLowerCase())) return dataConnectionActivity;
+        for (DataConnectionActivity type : values()) {
+            if(name != null && type.name().toLowerCase().equals(name.toLowerCase())) return type;
         }
         return UNKNOWN;
     }
-
 }
