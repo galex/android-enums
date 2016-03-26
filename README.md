@@ -21,14 +21,13 @@ Every enum will have three functions:
 Sometimes an Android API like TelephonyManager will return values that are not known to the Android Framework but to the phone manufacturer.
 For that reason, and to be bulletproof, every enum has an UNKNOWN enum added to so you can always call get() and have a returned value.
 
-
 ## Supported Constants
 
 Here are the list of constants converted to enums:
 
 #### ConnectivityManager
 
-##### ConnectivityType
+##### DataConnectionType
 
     - TYPE_MOBILE
     - TYPE_WIFI
@@ -43,13 +42,13 @@ Here are the list of constants converted to enums:
 
 #### TelephonyManager
 
-##### CallState
+##### DeviceCallState
 
     - CALL_STATE_IDLE
     - CALL_STATE_RINGING
     - CALL_STATE_OFFHOOK
 
-##### DataActivity
+##### DataConnectionActivity
 
     - DATA_ACTIVITY_NONE
     - DATA_ACTIVITY_IN

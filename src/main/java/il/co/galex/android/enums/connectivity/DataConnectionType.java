@@ -16,7 +16,7 @@ package il.co.galex.android.enums.connectivity;
  *
  * @author Alexander Gherschon
  */
-public enum ConnectivityType {
+public enum DataConnectionType {
 
     MOBILE(0),
     WIFI(1),
@@ -33,7 +33,7 @@ public enum ConnectivityType {
 
     private final int value;
 
-    ConnectivityType(int value) {
+    DataConnectionType(int value) {
         this.value = value;
     }
 
@@ -41,18 +41,18 @@ public enum ConnectivityType {
         return value;
     }
 
-    public static ConnectivityType get(int value){
+    public static DataConnectionType get(int value){
 
-        for (ConnectivityType connectivityType : values()) {
-            if(connectivityType.get() == value) return connectivityType;
+        for (DataConnectionType dataConnectionType : values()) {
+            if(dataConnectionType.get() == value) return dataConnectionType;
         }
         return UNKNOWN;
     }
 
-    public static ConnectivityType get(String name){
+    public static DataConnectionType get(String name){
 
-        for (ConnectivityType connectivityType : values()) {
-            if(name != null && connectivityType.name().toLowerCase().equals(name.toLowerCase())) return connectivityType;
+        for (DataConnectionType dataConnectionType : values()) {
+            if(name != null && dataConnectionType.name().toLowerCase().equals(name.toLowerCase())) return dataConnectionType;
         }
         return UNKNOWN;
     }

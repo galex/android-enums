@@ -11,7 +11,7 @@ package il.co.galex.android.enums.telephony;
  *
  * @author Alexander Gherschon
  */
-public enum DataActivity {
+public enum DataConnectionActivity {
 
     NONE(0),
     IN(1),
@@ -22,7 +22,7 @@ public enum DataActivity {
 
     private final int value;
 
-    DataActivity(int value) {
+    DataConnectionActivity(int value) {
         this.value = value;
     }
 
@@ -30,18 +30,18 @@ public enum DataActivity {
         return value;
     }
 
-    public static DataActivity get(int value){
+    public static DataConnectionActivity get(int value){
 
-        for (DataActivity dataActivity : values()) {
-            if(dataActivity.ordinal() == value) return dataActivity;
+        for (DataConnectionActivity dataConnectionActivity : values()) {
+            if(dataConnectionActivity.ordinal() == value) return dataConnectionActivity;
         }
         return UNKNOWN;
     }
 
-    public static DataActivity get(String name){
+    public static DataConnectionActivity get(String name){
 
-        for (DataActivity dataActivity : values()) {
-            if(name != null && dataActivity.name().toLowerCase().equals(name.toLowerCase())) return dataActivity;
+        for (DataConnectionActivity dataConnectionActivity : values()) {
+            if(name != null && dataConnectionActivity.name().toLowerCase().equals(name.toLowerCase())) return dataConnectionActivity;
         }
         return UNKNOWN;
     }

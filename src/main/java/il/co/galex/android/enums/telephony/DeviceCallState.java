@@ -9,7 +9,7 @@ package il.co.galex.android.enums.telephony;
  *
  * @author Alexander Gherschon
  */
-public enum CallState {
+public enum DeviceCallState {
 
     IDLE(0),
     RINGING(1),
@@ -18,7 +18,7 @@ public enum CallState {
 
     private final int value;
 
-    CallState(int value) {
+    DeviceCallState(int value) {
         this.value = value;
     }
 
@@ -26,18 +26,18 @@ public enum CallState {
         return value;
     }
 
-    public static CallState get(int value){
+    public static DeviceCallState get(int value){
 
-        for (CallState callState : values()) {
-            if(callState.ordinal() == value) return callState;
+        for (DeviceCallState deviceCallState : values()) {
+            if(deviceCallState.ordinal() == value) return deviceCallState;
         }
         return UNKNOWN;
     }
 
-    public static CallState get(String name){
+    public static DeviceCallState get(String name){
 
-        for (CallState callState : values()) {
-            if(name != null && callState.name().toLowerCase().equals(name.toLowerCase())) return callState;
+        for (DeviceCallState deviceCallState : values()) {
+            if(name != null && deviceCallState.name().toLowerCase().equals(name.toLowerCase())) return deviceCallState;
         }
         return UNKNOWN;
     }
